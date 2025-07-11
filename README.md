@@ -1,71 +1,33 @@
-# 🤖 Virgil – Discord Bot per GDR Cyberpunk
+# Virgil - Discord Bot per GDR Cyberpunk Carbon 2185
 
-Virgil è un bot Discord progettato per campagne di gioco di ruolo ambientate in mondi **cyberpunk** e in particolare per il sistema **Carbon 2185**, una reinterpretazione futuristica del regolamento D&D 5E.
+## Descrizione
+Virgil è un bot Discord scritto in Python con discord.py, progettato per supportare il server di gioco di ruolo ambientato in Carbon 2185.
 
-Il bot funge da **assistente virtuale** per sessioni fluide e immersive, fornendo strumenti automatizzati per master e giocatori.
+## Funzionalità base
+- Comando slash `/ping` per testare la risposta del bot
 
----
+## Setup e Deploy
 
-## ✨ Funzionalità principali
+1. Clona questo repository.
+2. Crea un file `.env` con le variabili:
+   ```
+   DISCORD_TOKEN=tuo-token-bot
+   GUILD_ID=id-del-server
+   ```
+3. Installa dipendenze:
+   ```
+   pip install -r requirements.txt
+   ```
+4. Avvia il bot localmente:
+   ```
+   python src/bot.py
+   ```
+5. Per il deploy su Render:
+   - Crea un Web Service su Render collegando questo repo
+   - Imposta Runtime: Python 3
+   - Build command: `pip install -r requirements.txt`
+   - Start command: `python src/bot.py`
+   - Aggiungi variabili d'ambiente `DISCORD_TOKEN` e `GUILD_ID`
 
-- 🎲 **Tiri di dado personalizzati** (compatibili con D&D 5E)
-- 🧾 **Gestione schede personaggio** (semplificata)
-- 📋 **Tracciamento missioni e obiettivi**
-- ⚔️ **Sistema iniziativa e combattimento**
-- 💉 **Supporto cyberware, modificatori e classi Carbon 2185**
-- 💬 **Comandi slash intuitivi** con interfaccia moderna
-
----
-
-## 🚧 Stato di sviluppo
-
-| Stato       | Funzionalità                            | Descrizione                                                  |
-|-------------|-----------------------------------------|--------------------------------------------------------------|
-| ✅           | Comandi base                            | /aiuto, /tira, /ping                                          |
-| ✅           | Tiri di dado 5E                         | Supporto a /tira 1d20+X                                      |
-| 🟡           | Iniziativa                              | Inserimento e ordinamento turni                              |
-| 🟡           | Gestione schede PG                      | Salvataggio e recupero dati                                 |
-| 🟡           | Mission tracker                         | Tracciamento obiettivi e quest                              |
-| 🔲           | Moduli cyberware e classi Carbon 2185   | Modificatori automatici                                      |
-| 🔲           | Integrazione AI (facoltativa)           | Prompt narrativi, nomi, ambientazioni                       |
-
----
-
-## 🚀 Deploy
-
-Puoi ospitare il bot su una delle seguenti piattaforme:
-
-### Render.com _(consigliato)_
-- ✅ Deploy continuo da GitHub
-- ✅ Piano gratuito con 550 ore/mese
-- 🌐 [https://render.com](https://render.com)
-
-### Railway.app
-- ✅ Interfaccia moderna, hosting e DB integrati
-- 🌐 [https://railway.app](https://railway.app)
-
-### Replit + UptimeRobot _(trucco gratuito)_
-- ✅ Hosting sempre attivo con workaround
-- 🌐 [https://replit.com](https://replit.com)
-
-### VPS (Hetzner, Contabo, etc.)
-- ✅ Pieno controllo e autonomia
-- ❌ Richiede gestione manuale
-
----
-
-## 🛠️ Setup locale
-
-```bash
-# Clona il repository
-git clone https://github.com/tuo-utente/VirgilBot.git
-cd VirgilBot
-
-# Installa le dipendenze (Node.js)
-npm install
-
-# Crea un file .env con il tuo token Discord
-cp .env.example .env
-
-# Avvia il bot
-node src/index.js
+## Licenza
+MIT
