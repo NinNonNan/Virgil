@@ -10,4 +10,4 @@ class Ping(commands.Cog):
         await interaction.response.send_message("🏓 Pong!")
 
 async def setup(bot):
-    await bot.add_cog(Ping(bot))
+    bot.add_cog(Ping(bot))
